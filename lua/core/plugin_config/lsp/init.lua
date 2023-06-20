@@ -1,9 +1,11 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls' }
+  ensure_installed = { 'lua_ls', 'jdtls', 'vtsls'  }
 })
 
 require('core.plugin_config.lsp.lua')
+require('core.plugin_config.lsp.java')
+require('core.plugin_config.lsp.javascript')
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

@@ -32,7 +32,13 @@ local plugins = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
-  }
+    'mfussenegger/nvim-jdtls',
+  },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 }
 
 local opts = {}
