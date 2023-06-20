@@ -4,7 +4,6 @@ require('mason-lspconfig').setup({
 })
 
 require('core.plugin_config.lsp.lua')
-require('core.plugin_config.lsp.java')
 require('core.plugin_config.lsp.javascript')
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -19,7 +18,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }

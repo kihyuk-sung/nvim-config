@@ -1,17 +1,16 @@
 local jdtls_path = vim.fn.stdpath('data') .. '/mason/packages/jdtls'
-local system = 'mac'
+local system = 'linux'
 local config_path = jdtls_path .. '/config_' .. system
 local plugin_path = jdtls_path .. '/plugins'
 local path_to_jar = plugin_path .. '/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar'
 local home = vim.env.HOME
-local java_home = home .. '/.sdkman/candidates/java'
-local jdk17_path = java_home .. '/17.0.7-tem'
-local jdk11_path = java_home .. '/11.0.19-tem'
-local jdk_home = java_home .. '/20.0.1-tem'
+local java_home = home .. '/.asdf/installs/java'
+local jdk17_path = java_home .. '/temurin-17.0.7+7'
+local jdk11_path = java_home .. '/temurin-11.0.19+7'
+local jdk_home = jdk17_path
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_path = vim.fn.stdpath('data') .. '/site/java/workspace_root/' .. project_name
-os.execute('mkdir ' .. workspace_path)
 
 local config = {
   cmd = {
